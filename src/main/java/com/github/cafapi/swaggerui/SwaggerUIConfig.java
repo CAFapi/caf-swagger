@@ -16,24 +16,22 @@
 package com.github.cafapi.swaggerui;
 
 import com.github.cafapi.CAFSwaggerUI;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationAttributes;
+import org.springframework.core.env.Environment;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.StringUtils;
 
 @Configuration
 @ComponentScan("com.github.cafapi.swaggerui")
-public class SwaggerUIConfig implements ImportBeanDefinitionRegistrar {
+public class SwaggerUIConfig implements ImportBeanDefinitionRegistrar, EnvironmentAware {
 
-    @Value("${management.server.port:0}")
-    private int adminPort = 0;
+    private Environment env;
 
     /**
      * Implement the ImportBeanDefinitionRegistrar interface to be able to pull out the values from the annotation that caused this
@@ -51,13 +49,19 @@ public class SwaggerUIConfig implements ImportBeanDefinitionRegistrar {
         if (annotationAttributes == null || StringUtils.isEmpty(annotationAttributes.get("value"))) {
             return;
         }
+        Integer adminPort = env.getProperty("management.server.port", Integer.class);
         String contractPath = "classpath:/" + ((String) annotationAttributes.get("value")).replace(".", "/") + "/";
         beanDefinitionRegistry.registerBeanDefinition("swaggerUIController",
                 BeanDefinitionBuilder
                         .genericBeanDefinition(SwaggerUIController.class)
                         .addConstructorArgValue(contractPath)
-                        .addConstructorArgValue(adminPort)
+                        .addConstructorArgValue(adminPort != null ? adminPort : 0)
                         .setScope("singleton")
                         .getBeanDefinition());
+    }
+
+    @Override
+    public void setEnvironment(Environment environment) {
+        this.env = environment;
     }
 }
