@@ -32,27 +32,28 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.0.0</version>
                 <executions>
                     <execution>
-                        <id>attach-templates</id>
+                        <id>archive-build</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>attach-artifact</goal>
+                            <goal>single</goal>
                         </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>${project.basedir}/src/main/resources/ApiClient.mustache</file>
-                                    <type>mustache</type>
-                                    <classifier>template</classifier>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                    <formats>
+                        <format>zip</format>
+                    </formats>
+                </configuration>
             </plugin>
         </plugins>
     </build>
