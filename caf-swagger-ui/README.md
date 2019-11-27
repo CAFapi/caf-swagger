@@ -9,10 +9,4 @@ Simply add the `CAFSwaggerUI` annotation to a SpringBoot application and specify
  
  ## Example
  
- ```
- @CAFSwaggerUI("my.package.with.contract")
- @SpringBootApplication
- public class MyService implements WebMvcConfigurer {
- 
- }
-```
+See [this commit](https://github.com/CAFDataProcessing/staging-service/commit/f4a051f08b522a1cf806083dd1d1b2237a88cddc) to the Staging Service for an example of using this annotation.
