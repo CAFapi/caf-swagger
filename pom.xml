@@ -78,6 +78,11 @@
                 <artifactId>spring-context</artifactId>
                 <version>${springVersion}</version>
             </dependency>
+            <dependency>
+                <groupId>org.webjars.npm</groupId>
+                <artifactId>swagger-ui-dist</artifactId>
+                <version>3.20.6</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
