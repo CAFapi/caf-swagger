@@ -24,6 +24,13 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
+            <directory>${project.build.directory}/templates</directory>
+            <outputDirectory>.</outputDirectory>
+            <excludes>
+                <exclude>**/okhttp-gson/ApiClient.mustache</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
             <directory>${project.basedir}/src/main/resources</directory>
             <outputDirectory>.</outputDirectory>
         </fileSet>
