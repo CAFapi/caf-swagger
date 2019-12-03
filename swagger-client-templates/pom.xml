@@ -28,6 +28,9 @@
 
     <artifactId>swagger-client-templates</artifactId>
     <packaging>pom</packaging>
+    <properties>
+        <swagger-version>1.0.14</swagger-version>
+    </properties>
 
     <build>
         <plugins>
@@ -43,7 +46,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://github.com/swagger-api/swagger-codegen-generators/archive/v1.0.14.zip</url>
+                            <url>https://github.com/swagger-api/swagger-codegen-generators/archive/v${swagger-version}.zip</url>
                             <unpack>true</unpack>
                             <outputDirectory>${project.build.directory}/temp</outputDirectory>
                         </configuration>
@@ -65,7 +68,7 @@
                             <outputDirectory>${project.build.directory}/templates/3.x</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.build.directory}/temp/swagger-codegen-generators-1.0.14/src/main/resources/handlebars/Java</directory>
+                                    <directory>${project.build.directory}/temp/swagger-codegen-generators-${swagger-version}/src/main/resources/handlebars/Java</directory>
                                 </resource>
                             </resources>
                         </configuration>
