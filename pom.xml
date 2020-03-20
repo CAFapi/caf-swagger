@@ -54,7 +54,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.microfocus</groupId>
+                <groupId>com.microfocus.webjars</groupId>
                 <artifactId>swagger-ui-dist</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>

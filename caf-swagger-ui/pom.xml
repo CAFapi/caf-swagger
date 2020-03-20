@@ -47,7 +47,7 @@
             <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.microfocus</groupId>
+            <groupId>com.microfocus.webjars</groupId>
             <artifactId>swagger-ui-dist</artifactId>
             <scope>runtime</scope>
         </dependency>
