@@ -41,7 +41,7 @@
     <properties>
         <copyrightYear>2020</copyrightYear>
         <springBootVersion>2.0.4.RELEASE</springBootVersion>
-        <springVersion>5.0.8.RELEASE</springVersion>
+        <springVersion>5.2.7.RELEASE</springVersion>
         <enforceCorrectDependencies>true</enforceCorrectDependencies>
     </properties>
 
