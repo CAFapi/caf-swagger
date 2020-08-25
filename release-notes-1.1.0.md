@@ -1,8 +1,11 @@
-!not-ready-for-release!
-
 #### Version Number
 ${version-number}
 
-#### New Features
+#### New Features  
+- None
 
-#### Known Issues
+#### Known Issues  
+- None
+
+#### Bug Fixes  
+- `SCMOD-9589`: Updated to prevent the possibility of Null Dereference  
