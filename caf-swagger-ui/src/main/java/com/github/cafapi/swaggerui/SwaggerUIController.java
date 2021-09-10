@@ -48,7 +48,7 @@ public class SwaggerUIController implements WebMvcConfigurer {
                 .addResourceLocations(
                         "classpath:/swagger/",
                         contractPath,
-                        "classpath:/META-INF/resources/webjars/microfocus-swagger-ui-dist/1.0.0/")
+                        "classpath:/META-INF/resources/webjars/microfocus-swagger-ui-dist/1.1.0/")
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());
     }
