@@ -40,7 +40,7 @@
     <properties>
         <copyrightYear>2022</copyrightYear>
         <springBootVersion>2.0.4.RELEASE</springBootVersion>
-        <springVersion>5.0.8.RELEASE</springVersion>
+        <springVersion>5.2.21.RELEASE</springVersion>
         <enforceCorrectDependencies>true</enforceCorrectDependencies>
     </properties>
 
