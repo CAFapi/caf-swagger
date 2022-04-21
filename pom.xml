@@ -38,7 +38,7 @@
     <inceptionYear>2019</inceptionYear>
 
     <properties>
-        <copyrightYear>2022</copyrightYear>
+        <copyrightYear>2020</copyrightYear>
         <springBootVersion>2.0.4.RELEASE</springBootVersion>
         <springVersion>5.0.8.RELEASE</springVersion>
         <enforceCorrectDependencies>true</enforceCorrectDependencies>
