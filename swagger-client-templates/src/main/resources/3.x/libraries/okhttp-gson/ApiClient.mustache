@@ -1194,7 +1194,7 @@ public class ApiClient {
                     @Override
                     public X509Certificate[] getAcceptedIssuers() { return null; }
                 };
-                SSLContext sslContext = SSLContext.getInstance("TLS");
+                SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
                 trustManagers = new TrustManager[]{ trustAll };
                 hostnameVerifier = new HostnameVerifier() {
                     @Override
@@ -1219,7 +1219,7 @@ public class ApiClient {
             }
 
             if (keyManagers != null || trustManagers != null) {
-                SSLContext sslContext = SSLContext.getInstance("TLS");
+                SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
                 sslContext.init(keyManagers, trustManagers, new SecureRandom());
                 httpClient.setSslSocketFactory(sslContext.getSocketFactory());
             } else {
