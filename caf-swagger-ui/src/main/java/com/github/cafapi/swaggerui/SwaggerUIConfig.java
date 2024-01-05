@@ -46,11 +46,15 @@ public class SwaggerUIConfig implements ImportBeanDefinitionRegistrar, Environme
         final AnnotationAttributes annotationAttributes = AnnotationAttributes.fromMap(
                 annotationMetadata.getAnnotationAttributes(annotationName, false)
         );
-        if (annotationAttributes == null || StringUtils.isEmpty(annotationAttributes.get("value"))) {
+        if (annotationAttributes == null) {
+            return;
+        }
+        final String contractPackage = (String) annotationAttributes.get("value");
+        if (!StringUtils.hasLength(contractPackage)) {
             return;
         }
         Integer adminPort = env.getProperty("management.server.port", Integer.class);
-        String contractPath = "classpath:/" + ((String) annotationAttributes.get("value")).replace(".", "/") + "/";
+        final String contractPath = "classpath:/" + contractPackage.replace(".", "/") + "/";
         beanDefinitionRegistry.registerBeanDefinition("swaggerUIController",
                 BeanDefinitionBuilder
                         .genericBeanDefinition(SwaggerUIController.class)
