@@ -15,13 +15,13 @@
  */
 package com.github.cafapi.swaggerui;
 
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.HandlerInterceptor;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
-public final class SwaggerInterceptor extends HandlerInterceptorAdapter {
+public final class SwaggerInterceptor implements HandlerInterceptor {
     private final int adminPort;
 
     SwaggerInterceptor(final int adminPort) {
