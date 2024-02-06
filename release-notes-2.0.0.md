@@ -1,5 +1,3 @@
-!not-ready-for-release!
-
 #### Version Number
 ${version-number}
 
@@ -14,3 +12,4 @@ ${version-number}
   The `swagger-client-templates` module is no longer supplied.
 
 #### Known Issues
+- None
