@@ -48,7 +48,7 @@ public class SwaggerUIController implements WebMvcConfigurer {
                 .addResourceLocations(
                         "classpath:/swagger/",
                         contractPath,
-                        "classpath:/META-INF/resources/webjars/opentext-swagger-ui-dist/2.0.0/")
+                        "classpath:/META-INF/resources/webjars/opentext-swagger-ui-dist/2.1.0/")
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());
     }
