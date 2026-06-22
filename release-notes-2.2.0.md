@@ -3,8 +3,11 @@
 #### Version Number
 ${version-number}
 
+#### Breaking Changes
+- US1147171: CAFSwagger utility now expects contract file to be named as `openapi.yaml`.
+
 #### New Features
-- US1147171: Update CAFSwagger project to expect contract file as openapi.yaml
+- None
 
 #### Known Issues
 - None
